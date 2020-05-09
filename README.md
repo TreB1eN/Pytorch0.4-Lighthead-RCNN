@@ -52,9 +52,11 @@ I have only trained it with 18 epochs instead of 30 epochs in the original paper
 
 2. #### Prepare COCO dataset.
 
-   It is recommended to symlink the dataset root to `$Lighthead-RCNN-Pytorch/data`.
+- It is recommended to symlink the dataset root to `$Lighthead-RCNN-Pytorch/data`.
 
-3. #### Create following folders and download the [pretrained model](https://drive.google.com/file/d/10Ku_G2FABjtEjWp3XWVmuguPkpbaTGV4/view?usp=sharing) to work_space/final
+- Create following folders and download the [pretrained model](https://drive.google.com/file/d/10Ku_G2FABjtEjWp3XWVmuguPkpbaTGV4/view?usp=sharing) to work_space/final
+
+- From the main Lighthead-RCNN-in-Pytorch0.4.1 directory run the script [download_coco_data.sh](scripts/download_coco_data.sh) to download and extract the coco dataset.
 
 ```shell
 Lighthead-RCNN-Pytorch
@@ -64,8 +66,7 @@ Lighthead-RCNN-Pytorch
 ├── data
 │   ├── coco2014
 │   │   ├── annotations
-│   │   ├── train2014
-│   │   ├── val2014
+│   │   ├── images
 ├── work_space
 │   ├── model
 │   ├── log
@@ -73,7 +74,19 @@ Lighthead-RCNN-Pytorch
 │   ├── save
 ```
 
+
 ### Installation 
+- Following configurations are tested
+    - Ubuntu 16.04 LTS
+    - Python 3.6 (Conda Environment has been used)
+    - Cuda 9.0
+    - GCC 5 (GCC 6 does not work)
+    - GPU Tesla K80
+
+- What will not work?
+    - I tried Python3.5, Python3.7 and Python2.7. None of these python versions worked for me.
+    - GCC 6 (On Debian, GCC 5 is not officially supported. So you may need to shift to Ubuntu. There will be workaround though that I didn't explore)
+
 
 1. Install PyTorch 0.4.1 and torchvision following the [official instructions](https://pytorch.org/).
 

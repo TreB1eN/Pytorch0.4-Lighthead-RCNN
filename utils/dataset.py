@@ -22,7 +22,8 @@ class coco_dataset(Dataset):
         else:
             self.training = False
             self.orig_dataset = COCOBboxDataset(data_dir=conf.coco_path, 
-                                                split='minival', 
+                                                split='minival',
+                                                year='2014',
                                                 use_crowded=True, 
                                                 return_crowded=True, 
                                                 return_area=True)
